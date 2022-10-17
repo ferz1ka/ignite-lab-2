@@ -1,17 +1,22 @@
+import { ReactNode } from 'react';
+import { Slot } from '@radix-ui/react-slot';
+
 export interface TypographyProps {
   size?: 'sm' | 'md' | 'lg'
-  children: string
+  children: ReactNode
+  asChild?: boolean
 }
 
-export function Typography({ size = 'md', children }: TypographyProps) {
+export function Typography({ size = 'md', children, asChild }: TypographyProps) {
+  const Comp = asChild ? Slot : 'span';
   return (
-    <span className={`
-    text-gray-100 
-    ${size == 'sm' && 'text-xs'} 
-    ${size == 'md' && 'text-md'} 
-    ${size == 'lg' && 'text-lg'}
+    <Comp className={`
+      text-gray-100
+      ${size == 'sm' && 'text-sm'} 
+      ${size == 'md' && 'text-md'} 
+      ${size == 'lg' && 'text-lg'}
     `}>
       {children}
-    </span>
+    </Comp>
   )
 }

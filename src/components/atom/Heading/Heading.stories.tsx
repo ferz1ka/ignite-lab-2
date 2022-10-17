@@ -1,34 +1,34 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Typography, TypographyProps } from './Typography'
+import { Heading, HeadingProps } from './Heading'
 
-export const Default: StoryObj<TypographyProps> = {
+export const Default: StoryObj<HeadingProps> = {
   args: {
     size: 'md'
   },
   argTypes: {
     size: {
-      options: ['sm', 'md', 'lg'],
+      options: ['lg', 'xl', 'xxl'],
       control: {
         type: 'inline-radio'
       }
-    },
+    }
   }
 }
 
-export const CustomComponent: StoryObj<TypographyProps> = {
+export const CustomComponent: StoryObj<HeadingProps> = {
   args: {
     asChild: true,
     children: (
-      <a>Esse texto é um exemplo de Slot (Radix-UI) usando a tag "a"</a>
+      <h1>Esse texto é um exemplo de Slot (Radix-UI) usando a tag "h1"</h1>
     )
   }
 }
 
 export default {
-  title: "Components/Typography",
-  component: Typography,
+  title: "Components/Heading",
+  component: Heading,
   args: {
-    children: "Typography"
+    children: "Heading"
   },
   argTypes: {
     children: {
@@ -42,4 +42,4 @@ export default {
       }
     }
   }
-} as Meta<TypographyProps>
+} as Meta<HeadingProps>

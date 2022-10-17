@@ -11,13 +11,15 @@ module.exports = {
       xxl: 32
     },
     colors: {
-      'black': '#000000',
+      'black': '#000',
+      'white': '#FFF',
       'gray-900': '#121214',
       'gray-800': '#202024',
       'gray-400': '#7C7C8A',
       'gray-100': '#E1E1E6',
       'cyan-500': '#81D8F7',
       'cyan-300': '#A6E0F5',
+      'transparent': 'transparent'
     },
     extend: {
       fontFamily: {
