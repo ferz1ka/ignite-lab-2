@@ -1,15 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Typography } from '../Typography'
-import { CheckBox, CheckBoxProps } from './CheckBox'
+import { CheckBox } from './CheckBox'
 
-export const Default: StoryObj<CheckBoxProps> = {}
+export const Default: StoryObj = {}
 
 export default {
   title: "Components/CheckBox",
   component: CheckBox,
-  args: {
-    checked: false
-  },
+  args: {},
   argTypes: {},
   decorators: [
     (Story) => (
@@ -19,4 +17,4 @@ export default {
       </div>
     )
   ]
-} as Meta<CheckBoxProps>
+} as Meta

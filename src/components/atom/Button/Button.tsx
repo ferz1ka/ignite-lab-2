@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   asChild?: boolean
 }
 
-export function Button({ children, asChild }: ButtonProps) {
+export function Button({ children, asChild, ...props }: ButtonProps) {
   const Comp = asChild ? Slot : 'button';
   return (
     <Comp className={`
@@ -29,7 +29,9 @@ export function Button({ children, asChild }: ButtonProps) {
       flex
       items-center
       justify-center
-    `}>
+    `}
+      {...props}
+    >
       {children}
     </Comp>
   )

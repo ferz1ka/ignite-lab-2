@@ -5,16 +5,18 @@ export interface TypographyProps {
   size?: 'sm' | 'md' | 'lg'
   children: ReactNode
   asChild?: boolean
+  className?: string
 }
 
-export function Typography({ size = 'md', children, asChild }: TypographyProps) {
+export function Typography({ size = 'md', children, asChild, className }: TypographyProps) {
   const Comp = asChild ? Slot : 'span';
   return (
     <Comp className={`
-      text-gray-100
+     text-gray-100
       ${size == 'sm' && 'text-sm'} 
       ${size == 'md' && 'text-md'} 
       ${size == 'lg' && 'text-lg'}
+      ${className}
     `}>
       {children}
     </Comp>
